@@ -23,7 +23,7 @@ ESP32-based fingerprint door lock system using FPC1020A sensor module with OLED 
 | Fingerprint Sensor   | FPC1020A Module (Biovo Protocol) |
 | Display              | 128x64 OLED SSD1306 (SPI)        |
 | Input                | Rotary Encoder with Push Button  |
-| Output               | LED, Passive Buzzer              |
+| Output               | LED, Buzzer Module (3-pin)       |
 +----------------------+----------------------------------+
 ```
 
@@ -57,8 +57,9 @@ ESP32-based fingerprint door lock system using FPC1020A sensor module with OLED 
 | LED              | Anode    | GPIO4            |
 |                  | Cathode  | GND (via 220Ω)   |
 +------------------+----------+------------------+
-| Buzzer           | +        | GPIO2            |
-|                  | -        | GND              |
+| Buzzer Module    | VCC      | 3.3V             |
+| (3-pin, active)  | GND      | GND              |
+|                  | SIG      | GPIO2            |
 +------------------+----------+------------------+
 ```
 
@@ -917,7 +918,7 @@ Clear result: OK (0x00)
 ## References
 
 - [FPC1020A Biovo Protocol Documentation (Japanese)](http://bibohlog.seesaa.net/article/483693537.html)
-- [Biovo Fingerprint Protocol](https://drive.google.com/file/d/1nP1yN7dACwIGUBrRUJXHOlDvjmE0nlT0/view?usp=drive_link)
+- Biovo Fingerprint Protocol (biovo_fingerprint_Protocol_en.DOC)
 
 **Note:** This project uses the Biovo protocol fingerprint module with FPC1020A sensor chip. This is different from the M5Stack Finger Unit which uses a different protocol.
 
