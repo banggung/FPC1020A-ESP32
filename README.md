@@ -35,10 +35,12 @@ ESP32-based fingerprint door lock system using FPC1020A sensor module with OLED 
 +------------------+----------+------------------+
 | Component        | Pin      | ESP32 GPIO       |
 +------------------+----------+------------------+
-| FPC1020A         | TX       | GPIO16 (RX2)     |
-|                  | RX       | GPIO17 (TX2)     |
+| FPC1020A         | GND      | GND              |
+| (6-pin module)   | UART_RX  | GPIO17 (TX2)     |
+|                  | UART_TX  | GPIO16 (RX2)     |
 |                  | VCC      | 3.3V             |
-|                  | GND      | GND              |
+|                  | TOUCH    | NC (not used)    |
+|                  | V-TOUCH  | 3.3V             |
 +------------------+----------+------------------+
 | OLED SSD1306     | CLK      | GPIO18           |
 | (SPI)            | MOSI     | GPIO23           |
